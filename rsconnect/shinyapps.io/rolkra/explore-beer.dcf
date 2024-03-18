@@ -1,0 +1,12 @@
+name: explore-beer
+title: explore-beer
+username: rolkra
+account: rolkra
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11440856
+bundleId: 8385932
+url: https://rolkra.shinyapps.io/explore-beer/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

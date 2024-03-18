@@ -19,8 +19,8 @@ ui <- shiny::fluidPage(
       shiny::tabsetPanel(
         shiny::tabPanel("variable",
                         shiny::conditionalPanel(condition = "input.target != '<no target>'",
-                                                shiny::plotOutput("graph_target")),
-                        shiny::plotOutput("graph", height = 300),
+                                                plotly::plotlyOutput("graph_target")),
+                        plotly::plotlyOutput("graph", height = 300),
                         shiny::verbatimTextOutput("text")
         ),
         #textOutput("text")

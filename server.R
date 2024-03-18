@@ -1,9 +1,12 @@
 # server: calculate statistics and generate plot
 server <- function(input, output, session) {
 
-  output$graph_target <- shiny::renderPlot({
+  output$graph_target <- plotly::renderPlotly({
     if(input$target != "<no target>" & input$var != input$target)  {
-      data %>% explore(!!sym(input$var), target = !!sym(input$target), auto_scale = input$auto_scale, split = input$split)
+      data %>% 
+        explore(!!sym(input$var), target = !!sym(input$target), 
+                auto_scale = input$auto_scale, split = input$split,
+                max_cat = 20, label = FALSE)
     }
   }) # renderPlot graph_target
   
@@ -23,8 +26,10 @@ server <- function(input, output, session) {
     } # if input$target
   }) # renderPlot graph_explain
   
-  output$graph <- shiny::renderPlot({
-    data %>% explore(!!sym(input$var), auto_scale = input$auto_scale)
+  output$graph <- plotly::renderPlotly({
+    data %>% 
+      explore(!!sym(input$var), auto_scale = input$auto_scale,
+              max_cat = 20, label = FALSE)
   }) # renderPlot graph
   
   output$text <- shiny::renderPrint({

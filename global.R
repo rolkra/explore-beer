@@ -6,6 +6,7 @@
 # packages that are used
 library(shiny)
 library(DT)
+library(plotly)
 library(tidyverse)
 library(explore)
 
@@ -18,21 +19,21 @@ data <- use_data_beer()
 data_title <- "Learn data science with beer"
   
 data_description <- paste(
-  "This datasets contain data of 161 beer from Austria, Germany and Swizerland.")
+  "This dataset contains data of 161 popular beer you can find in Austria (from Austria, Germany and Swizerland).")
 
 data_variables <- tribble(
   ~variable, ~description,
-  "name", "Name of the beer (Name)",
+  "name", "name of the beer (Name)",
   "brand", "brand name (Marke)",
   "country", "country (Land)",
   "year", "year when data was collected (Jahr)",
   "type", "type of beer (Art des Biers)",
   "color_dark", "is the color dark (Dunkles Bier?)",
-  "alcohol_vol_pct", "alcohol in volumne % (Alkoholgehalt)",
+  "alcohol_vol_pct", "alcohol in volume % (Alkoholgehalt)",
   "original_wort", "original wort (Stammwuerze)",
   "energy_kcal_100ml", "kcal in 100 ml (Energiegehalt)",
-  "carb_g_100ml", "gram carbs in 100 ml (Kohlenhydrate)",
-  "sugar_g_100ml", "gram sugar in 100 ml (Zuckergehalt)"
+  "carb_g_100ml", "grams of carbs in 100 ml (Kohlenhydrate)",
+  "sugar_g_100ml", "grams of sugar in 100 ml (Zuckergehalt)"
 )
 
 # prepare for exploration -------------------------------------------------
